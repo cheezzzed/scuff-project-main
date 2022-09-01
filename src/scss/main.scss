@@ -1,5 +1,5 @@
 @use 'reset';
-@use 'varialbes';
+@use 'variables';
 @use 'mixins';
 
 /* 1. Home Layout ================================= */
@@ -9,8 +9,422 @@
 }
 
 body {
-	background: rgb(46, 48, 50);
+	background: variables.$white;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.2;
 }
 
+.header{
+	min-height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/dist/img/main-scuf.jpg);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+
+	nav{
+		display: flex;
+		padding: 2% 6%;
+		justify-content: space-between;
+		align-items: center;
+
+		img{
+			width: 9.375em;
+		}
+
+		.nav-links{
+			flex: 1;
+			text-align: right;
+
+			@include mixins.bp-small{
+				position: absolute;
+				background: variables.$orange;
+				height: 100vh;
+				width: 12.5em;
+				top: 0;
+				right: -12.5em;
+				text-align: left;
+				z-index: 2;
+			}
+
+			.fa-solid{
+				display: none;
+
+				@include mixins.bp-small{
+					display: block;
+					color: variables.$white;
+					margin: 0.625em;
+					font-size: 1.375em;
+					cursor: pointer;
+				}
+			}
+
+			ul{
+
+				@include mixins.bp-small{
+					padding: 1.875em;
+				}
+			}
+
+			li{
+				list-style: none;
+				display: inline-block;
+				padding: 0.5em 0.75em;
+				position: relative;
+
+				@include mixins.bp-small{
+					display: block;
+				}
+			}
+
+			li::after{
+				content: '';
+				width: 0%;
+				height: 0.125em;
+				background: variables.$orange;
+				display: block;
+				margin: auto;
+				margin-top: 0.4em;
+				transition: 0.5s;
+			}
+
+			li:hover::after{
+				width: 100%;
+			}
+
+			a{
+				color: variables.$white;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-size: 0.813em;
+			}
+		}
+	}
+
+	.text-box{
+		width: 90%;
+		color: variables.$white;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+
+		h1{
+			font-size: 3.875em;
+			font-weight: 700;
+			text-transform: uppercase;
+
+			@include mixins.bp-small{
+				font-size: 1.5em;
+			}
+		}
+
+		p{
+			margin: 2em 0 2.5em;
+			font-size: 2em;
+		}
+
+		.btn{
+			display: inline-block;
+			text-transform: uppercase;
+			text-decoration: none;
+			color: variables.$dark-grey;
+			border: 1px solid variables.$orange;
+			border-radius: 15px;
+			padding: 0.75em 2.125em;
+			font-size: 0.813em;
+			font-weight: 700;
+			background: variables.$orange;
+			position: relative;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		.btn:hover{
+			border: 1px solid variables.$dark-grey;
+			background: variables.$dark-grey;
+			color: variables.$orange;
+		}
+	}
+}
+
+.products{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 6.25em;
+
+	h2{
+		font-size: 2.25em;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	p{
+		color: variables.$dark-grey;
+		font-size: 1em;
+		font-weight: 400;
+		line-height: 1.375em;
+		padding: 0.625em;
+	}
+
+	.row{
+		margin-top: 5%;
+		display: flex;
+		justify-content: space-between;
+
+		@include mixins.bp-small{
+			flex-direction: column;
+			margin-top: 3em;
+		}
+
+		.products-col{
+			flex-basis: 31%;
+			margin-bottom: 5%;
+			padding: 1.25em 0.75em;
+			box-sizing: border-box;
+			transition: 0.5s;
+
+			@include mixins.bp-small{
+				margin-bottom: 8em;
+			}
+
+			.products-col:hover{
+				box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+			}
+
+			h3{
+				text-align: center;
+				font-weight: 700;
+				font-size: 1.75em;
+				text-transform: uppercase;
+				margin: 0.625 0;
+			}
+
+			.gear{
+				width: 100%;
+				margin-top: 5%;
+			}
+			
+			.btn{
+				text-transform: uppercase;
+				text-decoration: none;
+				color: variables.$dark-grey;
+				border: 1px solid variables.$orange;
+				border-radius: 15px;
+				padding: 0.75em 2.125em;
+				margin-top: 5%;
+				font-size: 0.813em;
+				font-weight: 700;
+				background: variables.$orange;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+
+			.btn:hover{
+				border: 1px solid variables.$dark-grey;
+				background: variables.$dark-grey;
+				color: variables.$orange;
+			}
+		}
+	}
+}
+
+.featured{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	// padding-top: 3.125em;
+
+	h2{
+		font-size: 2.25em;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	p{
+		color: variables.$dark-grey;
+		font-size: 1em;
+		font-weight: 400;
+		line-height: 1.375em;
+		padding: 0.625em;
+		margin-bottom: 5%;
+	}
+
+	.row{
+		display: flex;
+
+		@include mixins.bp-small{
+			display: block;
+		}
+
+		.featured-col{
+			margin-left: 2em;
+			flex-basis: 32%;
+			border-radius: 20px;
+			margin-bottom: 0.625em;
+			position: relative;
+			overflow: hidden;
+
+			img{
+				width: 100%;
+				height: 40em;
+			}
+
+			.layer{
+				background: transparent;
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				transition: 0.5s;
+
+				h3{
+					width: 100%;
+					font-weight: 700;
+					color: variables.$white;
+					font-size: 1.625em;
+					text-transform: uppercase;
+					margin-bottom: 1em;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					position: absolute;
+					opacity: 0;
+					transition: 0.5s;
+				}
+
+			}
+
+			.layer:hover h3{
+				bottom: 49%;
+				opacity: 1;
+			}
+			
+			.layer:hover{
+				background: variables.$dark-transparent;
+			}
+		}
+	}
+
+}
+
+.most-popular{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 6.25em;
+	
+	h2{
+		font-size: 2.25em;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	p{
+		color: variables.$dark-grey;
+		font-size: 1em;
+		font-weight: 400;
+		line-height: 1.375em;
+		padding: 0.625em;
+		margin-bottom: 5%;
+	}
+
+	.row{
+		display: flex;
+
+		@include mixins.bp-small{
+			display: block;
+		}
+
+		.popular-col{
+			flex-basis: 33%;
+			margin-bottom: 5%;
+
+			img{
+				width: 100%;
+			}
+
+			h3{
+				font-weight: 700;
+				font-size: 1.5em;
+				text-transform: uppercase;
+			}
+
+			p{
+				padding: 0;
+			}
+
+			.btn{
+				text-transform: uppercase;
+				text-decoration: none;
+				color: variables.$dark-grey;
+				border: 1px solid variables.$orange;
+				border-radius: 15px;
+				padding: 0.75em 2.125em;
+				margin-top: 5%;
+				font-size: 0.813em;
+				font-weight: 700;
+				background: variables.$orange;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+
+			.btn:hover{
+				border: 1px solid variables.$dark-grey;
+				background: variables.$dark-grey;
+				color: variables.$orange;
+			}
+		}
+	}
+}
+
+.reflex{
+	margin: 6.25em auto;
+	width: 80%;
+	background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/dist/img/ppr.png);
+	background-position: center;
+	background-size: cover;
+	border-radius: 20px;
+	text-align: center;
+	padding: 6.25em 0;
+	line-height: 2;
+
+	p{
+		font-size: 1.5em;
+		color: variables.$white;
+		text-transform: uppercase;
+
+		@include mixins.bp-small{
+			font-size: 0.75em;
+		}
+	}
+
+	h2{
+		color: variables.$white;
+		margin-bottom: 2.5;
+		padding: 0;
+		font-size: 2.25em;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		@include mixins.bp-small{
+			font-size: 1.5em;
+		}
+	}
+
+	.btn{
+		text-transform: uppercase;
+		text-decoration: none;
+		color: variables.$white;
+		transition: 0.5s;
+	}
+
+	.btn:hover{
+		color: variables.$orange;
+	}
+}
 /* 2. Gaming Layout ================================= */
 

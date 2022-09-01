@@ -1,19 +1,19 @@
 /* 0. Breakpoints ==================================== */
 // Small tablets and large smartphones (landscape view)
 
-$breakpoint-phone: 576px;
+$breakpoint-phone: 400px;
 
 // Small tablets (portrait view)
 
-$breakpoint-tablet: 768px;
+$breakpoint-tablet: 800px;
 
 // Tablets and small desktops
 
-$breakpoint-desktop: 992px;
+$breakpoint-desktop: 1000px;
 
 // Large tablets and desktops
 
-$breakpoint-xl: 1200px;
+$breakpoint-xl: 1500px;
 
 /* 1. Colors ========================================= */
 
@@ -22,6 +22,8 @@ $faded: #FCEFEF;
 $black: #1D1C1E;
 $white: #FFFFFF;
 $orange: #FF8F1D;
+$transparent: #f7ac62b2;
 $dark-grey: #43424A;
+$dark-transparent: #43424ace;
 $light-grey: #D9D9DB;
 $salmon: #E7816B;

@@ -83,12 +83,12 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -103,132 +103,424 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: "";
-	content: none;
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-/* 
-==============================================
-CONTENT:	Project Name Here
-AUTHOR:		Your Name Here
-==============================================
-
-TABLE OF CONTENTS:
-
-0. Reset
-1. Main Layout
-2. Content
-
-==============================================
-*/
-/* 0. Reset ================================= */
-/* 
-If you want to add partials, use Sass Modules via @use:
-@use 'variables';
-
-Usage: partial-name.variable/mixin/function-name:
-background: variables.$primary-color;
-*/
-/* 1. Main Layout ================================= */
+/* 0. Breakpoints ==================================== */
+/* 1. Colors ========================================= */
+/* 1. Home Layout ================================= */
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	background: #2e3032;
+  background: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.2;
 }
 
-/* 2. Content ================================= */
-.floating-box {
-	position: relative;
-	font-family: sans-serif;
-	width: 90%;
-	max-width: 500px;
-	margin: 140px auto;
-	padding: 30px 20px 30px 30px;
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/dist/img/main-scuf.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
-.floating-box .foreground {
-	position: relative;
-	z-index: 2;
-	transform: translateZ(100px);
+.header nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
 }
-.floating-box .background {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: white;
-	z-index: 1;
-	transition: 0.2s;
-	transform: translateX(20px) perspective(600px) rotateY(15deg);
+.header nav img {
+  width: 9.375em;
 }
-.floating-box:hover .background {
-	transform: translateX(-30px) perspective(600px) rotateY(-15deg);
+.header nav .nav-links {
+  flex: 1;
+  text-align: right;
 }
-.floating-box .logo {
-	position: absolute;
-	top: -30px;
-	width: 60px;
-	z-index: 2;
-	transform: translateZ(100px);
-	transition: 0.3s;
+@media screen and (max-width: 400px) {
+  .header nav .nav-links {
+    position: absolute;
+    background: #FF8F1D;
+    height: 100vh;
+    width: 12.5em;
+    top: 0;
+    right: -12.5em;
+    text-align: left;
+    z-index: 2;
+  }
 }
-.floating-box .logo:hover {
-	-ms-transform: rotate(-0.4turn);
-	    transform: rotate(-0.4turn);
+.header nav .nav-links .fa-solid {
+  display: none;
 }
-.floating-box h1 {
-	font-weight: 700;
-	font-size: 22pt;
-	margin: 15px 0;
+@media screen and (max-width: 400px) {
+  .header nav .nav-links .fa-solid {
+    display: block;
+    color: #FFFFFF;
+    margin: 0.625em;
+    font-size: 1.375em;
+    cursor: pointer;
+  }
 }
-.floating-box p {
-	color: #777;
-	line-height: 140%;
+@media screen and (max-width: 400px) {
+  .header nav .nav-links ul {
+    padding: 1.875em;
+  }
 }
-.floating-box p.github {
-	font-size: 0.8em;
+.header nav .nav-links li {
+  list-style: none;
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  position: relative;
 }
-.floating-box p.github a {
-	opacity: 0.2;
-	transition: 0.3s;
+@media screen and (max-width: 400px) {
+  .header nav .nav-links li {
+    display: block;
+  }
 }
-.floating-box p.github a:hover {
-	opacity: 1;
-	color: red;
+.header nav .nav-links li::after {
+  content: "";
+  width: 0%;
+  height: 0.125em;
+  background: #FF8F1D;
+  display: block;
+  margin: auto;
+  margin-top: 0.4em;
+  transition: 0.5s;
 }
-.floating-box code {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 0.8em;
-	opacity: 0.2;
+.header nav .nav-links li:hover::after {
+  width: 100%;
 }
+.header nav .nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.813em;
+}
+.header .text-box {
+  width: 90%;
+  color: #FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+.header .text-box h1 {
+  font-size: 3.875em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 400px) {
+  .header .text-box h1 {
+    font-size: 1.5em;
+  }
+}
+.header .text-box p {
+  margin: 2em 0 2.5em;
+  font-size: 2em;
+}
+.header .text-box .btn {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #43424A;
+  border: 1px solid #FF8F1D;
+  border-radius: 15px;
+  padding: 0.75em 2.125em;
+  font-size: 0.813em;
+  font-weight: 700;
+  background: #FF8F1D;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.header .text-box .btn:hover {
+  border: 1px solid #43424A;
+  background: #43424A;
+  color: #FF8F1D;
+}
+
+.products {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 6.25em;
+}
+.products h2 {
+  font-size: 2.25em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.products p {
+  color: #43424A;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.375em;
+  padding: 0.625em;
+}
+.products .row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 400px) {
+  .products .row {
+    flex-direction: column;
+    margin-top: 3em;
+  }
+}
+.products .row .products-col {
+  flex-basis: 31%;
+  margin-bottom: 5%;
+  padding: 1.25em 0.75em;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+@media screen and (max-width: 400px) {
+  .products .row .products-col {
+    margin-bottom: 8em;
+  }
+}
+.products .row .products-col .products-col:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+.products .row .products-col h3 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  margin: 0.625 0;
+}
+.products .row .products-col .gear {
+  width: 100%;
+  margin-top: 5%;
+}
+.products .row .products-col .btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #43424A;
+  border: 1px solid #FF8F1D;
+  border-radius: 15px;
+  padding: 0.75em 2.125em;
+  margin-top: 5%;
+  font-size: 0.813em;
+  font-weight: 700;
+  background: #FF8F1D;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.products .row .products-col .btn:hover {
+  border: 1px solid #43424A;
+  background: #43424A;
+  color: #FF8F1D;
+}
+
+.featured {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.featured h2 {
+  font-size: 2.25em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.featured p {
+  color: #43424A;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.375em;
+  padding: 0.625em;
+  margin-bottom: 5%;
+}
+.featured .row {
+  display: flex;
+}
+@media screen and (max-width: 400px) {
+  .featured .row {
+    display: block;
+  }
+}
+.featured .row .featured-col {
+  margin-left: 2em;
+  flex-basis: 32%;
+  border-radius: 20px;
+  margin-bottom: 0.625em;
+  position: relative;
+  overflow: hidden;
+}
+.featured .row .featured-col img {
+  width: 100%;
+  height: 40em;
+}
+.featured .row .featured-col .layer {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 0.5s;
+}
+.featured .row .featured-col .layer h3 {
+  width: 100%;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-size: 1.625em;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}
+.featured .row .featured-col .layer:hover h3 {
+  bottom: 49%;
+  opacity: 1;
+}
+.featured .row .featured-col .layer:hover {
+  background: rgba(67, 66, 74, 0.8078431373);
+}
+
+.most-popular {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 6.25em;
+}
+.most-popular h2 {
+  font-size: 2.25em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.most-popular p {
+  color: #43424A;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.375em;
+  padding: 0.625em;
+  margin-bottom: 5%;
+}
+.most-popular .row {
+  display: flex;
+}
+@media screen and (max-width: 400px) {
+  .most-popular .row {
+    display: block;
+  }
+}
+.most-popular .row .popular-col {
+  flex-basis: 33%;
+  margin-bottom: 5%;
+}
+.most-popular .row .popular-col img {
+  width: 100%;
+}
+.most-popular .row .popular-col h3 {
+  font-weight: 700;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.most-popular .row .popular-col p {
+  padding: 0;
+}
+.most-popular .row .popular-col .btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #43424A;
+  border: 1px solid #FF8F1D;
+  border-radius: 15px;
+  padding: 0.75em 2.125em;
+  margin-top: 5%;
+  font-size: 0.813em;
+  font-weight: 700;
+  background: #FF8F1D;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.most-popular .row .popular-col .btn:hover {
+  border: 1px solid #43424A;
+  background: #43424A;
+  color: #FF8F1D;
+}
+
+.reflex {
+  margin: 6.25em auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/dist/img/ppr.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  text-align: center;
+  padding: 6.25em 0;
+  line-height: 2;
+}
+.reflex p {
+  font-size: 1.5em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 400px) {
+  .reflex p {
+    font-size: 0.75em;
+  }
+}
+.reflex h2 {
+  color: #FFFFFF;
+  margin-bottom: 2.5;
+  padding: 0;
+  font-size: 2.25em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 400px) {
+  .reflex h2 {
+    font-size: 1.5em;
+  }
+}
+.reflex .btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: 0.5s;
+}
+.reflex .btn:hover {
+  color: #FF8F1D;
+}
+
+/* 2. Gaming Layout ================================= */
 /*# sourceMappingURL=main.css.map */

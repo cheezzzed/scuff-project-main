@@ -10,24 +10,143 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="dist/css/main.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
 	</head>
 
 	<body>
-		<div class="floating-box">
-			<img class="logo" src="dist/img/logo.png" alt="Circus Logo" />
-			<div class="foreground">
-				<h1>Hello World!</h1>
-				<p>Yep, you've got the Circus Starter project working.</p>
-				<p>Congratulations! You're ready to code.</p>
-				<p class="github">
-					<a target="_blank" rel="noopener" href="https://github.com/CreativeCircus/circus-starter"
-						>https://github.com/CreativeCircus/circus-starter</a
-					>
+		<section class="header">
+			<nav>
+				<a href="index.html"><img src="/dist/img/logo.png" alt="Scuf logo"></a>
+				<div class="nav-links">
+					<i class="fa-solid fa-x"></i>
+					<ul>
+						<li><a href="">shop</a></li>
+						<li><a href="">customize</a></li>
+						<li><a href="">gaming</a></li>
+						<li><a href="">discover</a></li>
+					</ul>
+				</div>
+				<i class="fa-solid fa-chevron-left"></i>
+			</nav>
+			<div class="text-box">
+				<h1>the greenwall expands</h1>
+				<p>
+					A new addition to OpTic Gaming arrives 
+					<br>for both Reflex and Instinct
 				</p>
-				<code>1.10.0</code>
+				<a class="btn" href="">shop</a>
 			</div>
-			<div class="background"></div>
-		</div>
+		</section>
+
+		<section class="products">
+			<h2>Products We Offer</h2>
+			<p>Select between our different products</p>
+			<div class="row">
+				<div class="products-col">
+					<h3>playstation 5 + pc</h3>
+					<img class="gear" src="/dist/img/reflex.png" alt="">
+					<p>
+						Stay unstoppable with ergonomically 
+						designed remappable paddles, adaptive 
+						triggers, and onboard profiles that allow 
+						you to quickly switch from one game to 
+						another after you beat it in record time 
+						with Reflex. 
+					</p>
+					<a class="btn" href="">shop</a>
+				</div>
+				<div class="products-col">
+					<h3>xbox + pc</h3>
+					<img class="gear" src="/dist/img/instinct.png" alt="">
+					<p>
+						Built for speed with four newly designed 
+						remappable paddles, interchangeable 
+						thumbsticks and three on-board profiles.
+					</p>
+					<a class="btn" href="">shop</a>
+				</div>
+				<div class="products-col">
+					<h3>headsets &amp; gear</h3>
+					<img class="gear" src="/dist/img/h1.png" alt="">
+					<p>
+						The perfect pairing for your SCUF gaming 
+						controller, our gaming headphones has 
+						been created to perform and fit your 
+						style, whether you're on Playstation, 
+						Xbox, or PC.
+					</p>
+					<a class="btn" href="">shop</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="featured">
+			<h2>featured products</h2>
+			<p>Check out our newly featured arrivals</p>
+			<div class="row">
+				<a href="">
+					<div class="featured-col">
+						<img src="/dist/img/victory-scuf.jpg" alt="">
+						<div class="layer">
+							<h3>victory royale</h3>
+						</div>
+					</div>
+				</a>
+				<a href="">
+					<div class="featured-col">
+						<img src="/dist/img/metaverse-scuf.jpg" alt="">
+						<div class="layer">
+							<h3>enter the metaverse</h3>
+						</div>
+					</div>
+				</a>
+				<a href="">
+					<div class="featured-col">
+						<img src="/dist/img//warzone.jpg" alt="">
+						<div class="layer">
+							<h3>play better with scuf</h3>
+						</div>
+					</div>
+				</a>				
+			</div>
+		</section>
+
+		<section class="most-popular">
+			<h2>most popular</h2>
+			<p>Explore some customized controllers made by our team</p>
+			<div class="row">
+				<div class="popular-col">
+					<img src="/dist/img/charter.png" alt="">
+					<h3>SCUF Instinct Charter</h3>
+					<p>Xbox Series X/S and PC</p>
+					<p>From $199.98</p>
+					<a class="btn" href="">shop</a>
+				</div>
+				<div class="popular-col">
+					<img src="/dist/img/energon.png" alt="">
+					<h3>Scuf Infinity4PS Pro Energon</h3>
+					<p>Playstation 4 and PC</p>
+					<p>From $169.99</p>
+					<a class="btn" href="">shop</a>
+				</div>
+				<div class="popular-col">
+					<img src="/dist/img/blossom.png" alt="">
+					<h3>Scuf Infinity4PS Pro Blossom</h3>
+					<p>Playstation 4 and PC</p>
+					<p>From $169.99</p>
+					<a class="btn" href="">shop</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="reflex">
+			<p>playstation 5 and pc</p>
+			<h2>reflex</h2>
+			<a class="btn" href="">learn more ></a>
+			<!-- <div class="row">
+
+			</div> -->
+		</section>
 
 		<script src="dist/js/main.js"></script>
 	</body>
