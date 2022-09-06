@@ -142,8 +142,14 @@ table {
 
 body {
   background: #FFFFFF;
+  background-image: url(/dist/img/background.jpeg);
   font-family: "Open Sans", sans-serif;
   line-height: 1.2;
+}
+@media screen and (max-width: 400px) {
+  body {
+    background-image: url(/dist/img/mobile-background.jpeg);
+  }
 }
 
 .header {
@@ -272,7 +278,6 @@ body {
 }
 
 .products {
-  width: 80%;
   margin: auto;
   text-align: center;
   padding-top: 6.25em;
@@ -345,6 +350,12 @@ body {
   background: #43424A;
   color: #FF8F1D;
 }
+.products .row .products-col .xbox {
+  margin-bottom: 2.8em;
+}
+.products .row .products-col .headset {
+  margin-bottom: 1.3em;
+}
 
 .featured {
   width: 80%;
@@ -380,9 +391,13 @@ body {
   position: relative;
   overflow: hidden;
 }
+@media screen and (max-width: 400px) {
+  .featured .row .featured-col {
+    margin-left: 0;
+  }
+}
 .featured .row .featured-col img {
   width: 100%;
-  height: 40em;
 }
 .featured .row .featured-col .layer {
   background: transparent;
@@ -417,7 +432,6 @@ body {
 }
 
 .most-popular {
-  width: 80%;
   margin: auto;
   text-align: center;
   padding-top: 6.25em;
@@ -520,6 +534,44 @@ body {
 }
 .reflex .btn:hover {
   color: #FF8F1D;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  background-color: #43424A;
+  line-height: 1.5;
+  padding: 3em;
+}
+@media screen and (max-width: 400px) {
+  .flex {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2em;
+    text-align: center;
+  }
+}
+.flex .footer-col {
+  color: #D9D9DB;
+}
+.flex .footer-col h4 {
+  color: #FF8F1D;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.25em;
+}
+@media screen and (max-width: 400px) {
+  .flex .footer-col nav {
+    margin-bottom: 2em;
+  }
+}
+.flex .footer-col a {
+  text-decoration: none;
+  color: #D9D9DB;
+  font-size: 1.25em;
+  line-height: 1.7;
 }
 
 /* 2. Gaming Layout ================================= */
