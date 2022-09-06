@@ -34,7 +34,11 @@ body {
 		align-items: center;
 
 		img{
-			width: 9.375em;
+			width: 15em;
+
+			@include mixins.bp-small{
+				width: 10em;
+			}
 		}
 
 		.nav-links{
@@ -101,7 +105,7 @@ body {
 				color: variables.$white;
 				text-decoration: none;
 				text-transform: uppercase;
-				font-size: 0.813em;
+				font-size: 1.5em;
 			}
 		}
 	}
@@ -116,7 +120,7 @@ body {
 		text-align: center;
 
 		h1{
-			font-size: 3.875em;
+			font-size: 5em;
 			font-weight: 700;
 			text-transform: uppercase;
 
@@ -127,7 +131,11 @@ body {
 
 		p{
 			margin: 2em 0 2.5em;
-			font-size: 2em;
+			font-size: 3em;
+
+			@include mixins.bp-small{
+				font-size: 2em;
+			}
 		}
 
 		.btn{
@@ -136,14 +144,18 @@ body {
 			text-decoration: none;
 			color: variables.$dark-grey;
 			border: 1px solid variables.$orange;
-			border-radius: 15px;
+			border-radius: 50px;
 			padding: 0.75em 2.125em;
-			font-size: 0.813em;
+			font-size: 1.5em;
 			font-weight: 700;
 			background: variables.$orange;
 			position: relative;
 			cursor: pointer;
 			transition: 0.3s;
+
+			@include mixins.bp-small{
+				font-size: 1em;
+			}
 		}
 
 		.btn:hover{
@@ -216,7 +228,7 @@ body {
 				text-decoration: none;
 				color: variables.$dark-grey;
 				border: 1px solid variables.$orange;
-				border-radius: 15px;
+				border-radius: 50px;
 				padding: 0.75em 2.125em;
 				margin-top: 5%;
 				font-size: 0.813em;
@@ -377,7 +389,7 @@ body {
 				text-decoration: none;
 				color: variables.$dark-grey;
 				border: 1px solid variables.$orange;
-				border-radius: 15px;
+				border-radius: 50px;
 				padding: 0.75em 2.125em;
 				margin-top: 5%;
 				font-size: 0.813em;
@@ -445,7 +457,7 @@ body {
 .flex{
 	display: flex;
 	justify-content: space-between;
-	background-color: variables.$dark-grey;
+	background-color: variables.$black;
 	line-height: 1.5;
 	padding: 3em;
 	
@@ -482,3 +494,286 @@ body {
 }
 /* 2. Gaming Layout ================================= */
 
+.header-vault{
+	background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://scufgaming.com/media/prismic/74e1fcee-2ac5-484c-aa08-35b3cecf0374_scuf_vault_dt_2880x1666_v2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 40vh;
+	width: 100%;
+	position: relative;
+
+	nav{
+		display: flex;
+		padding: 2% 6%;
+		justify-content: space-between;
+		align-items: center;
+
+		img{
+			width: 15em;
+
+			@include mixins.bp-small{
+				width: 10em;
+			}
+		}
+
+		.nav-links{
+			flex: 1;
+			text-align: right;
+
+			@include mixins.bp-small{
+				position: absolute;
+				background: variables.$orange;
+				height: 100vh;
+				width: 12.5em;
+				top: 0;
+				right: -12.5em;
+				text-align: left;
+				z-index: 2;
+			}
+
+			.fa-solid{
+				display: none;
+
+				@include mixins.bp-small{
+					display: block;
+					color: variables.$white;
+					margin: 0.625em;
+					font-size: 1.375em;
+					cursor: pointer;
+				}
+			}
+
+			ul{
+
+				@include mixins.bp-small{
+					padding: 1.875em;
+				}
+			}
+
+			li{
+				list-style: none;
+				display: inline-block;
+				padding: 0.5em 0.75em;
+				position: relative;
+
+				@include mixins.bp-small{
+					display: block;
+				}
+			}
+
+			li::after{
+				content: '';
+				width: 0%;
+				height: 0.125em;
+				background: variables.$orange;
+				display: block;
+				margin: auto;
+				margin-top: 0.4em;
+				transition: 0.5s;
+			}
+
+			li:hover::after{
+				width: 100%;
+			}
+
+			a{
+				color: variables.$white;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-size: 1.5em;
+			}
+		}
+	}
+
+	.text-box{
+		width: 90%;
+		color: variables.$white;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+
+		h1{
+			font-size: 4em;
+			font-weight: 700;
+			text-transform: uppercase;
+			padding-top: 2em;
+
+			@include mixins.bp-small{
+				font-size: 1.5em;
+			}
+		}
+
+		p{
+			margin: 2em 0 2.5em;
+			font-size: 2em;
+		}
+
+		.btn{
+			display: inline-block;
+			text-transform: uppercase;
+			text-decoration: none;
+			color: variables.$dark-grey;
+			border: 1px solid variables.$orange;
+			border-radius: 50px;
+			padding: 0.75em 2.125em;
+			font-size: 1.2em;
+			font-weight: 700;
+			background: variables.$orange;
+			position: relative;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		.btn:hover{
+			border: 1px solid variables.$dark-grey;
+			background: variables.$dark-grey;
+			color: variables.$orange;
+		}
+	}
+}
+
+.context{
+	
+	.context-copy{
+		margin: 3em 15em;
+
+		@include mixins.bp-small{
+			margin: 3em;
+		}
+		
+		p{
+			line-height: 1.9;
+			color: variables.$dark-grey;
+		}
+	}
+}
+
+.vault{
+	display: flex;
+	text-align: center;
+	background-color: variables.$black;
+	width: 100%;
+
+	@include mixins.bp-small{
+		flex-direction: column;
+	}
+
+	.vault-row{
+		padding: 2em;
+
+		img{
+			width: 100%;
+		}
+
+		h2{
+			font-size: 2.25em;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: variables.$orange;
+		}
+
+		.series{
+			margin-bottom: 2em;
+			font-size: 1.2em;
+			text-transform: uppercase;
+			color: variables.$orange;
+		}
+
+		p{
+			margin-bottom: 2em;
+			font-size: 1.1em;
+			color: variables.$light-grey;
+		}
+
+		.btn{
+			text-transform: uppercase;
+			text-decoration: none;
+			color: variables.$dark-grey;
+			border: 1px solid variables.$orange;
+			border-radius: 50px;
+			padding: 0.75em 2.125em;
+			margin-top: 5%;
+			font-weight: 700;
+			background: variables.$orange;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		.btn:hover{
+			border: 1px solid variables.$dark-grey;
+			background: variables.$dark-grey;
+			color: variables.$orange;
+		}
+
+		.vl{
+			padding: 0.25em 1em;
+		}
+
+		.vantage-links{
+			display: flex;
+			flex-direction: column;
+			line-height: 2;
+		}
+	}
+}
+
+.guides{
+	margin: 5%;
+
+	.guides-col{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		@include mixins.bp-small{
+			display: flex;
+		}
+
+		.guides-text{
+			place-self: center;
+
+			h2{
+				font-size: 2.25em;
+				font-weight: 700;
+				text-transform: uppercase;
+				margin-bottom: 1em;
+			}
+
+			p{
+				padding-right: 3em;
+				padding-bottom: 2em;
+
+				@include mixins.bp-small{
+					padding-right: 1em;
+				}
+			}
+
+			a{
+				text-decoration: none;
+				text-transform: uppercase;
+				color: variables.$dark-grey;
+				font-weight: 700;
+				transition: 0.5s;
+			}
+
+			a:hover{
+				color: variables.$orange;
+			}
+		}
+
+		.games{
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		img{
+			width: 50%;
+
+			@include mixins.bp-small{
+				width: 50%;
+			}
+		}
+	}
+}
