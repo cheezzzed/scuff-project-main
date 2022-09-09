@@ -9,7 +9,7 @@
 
 //Medium Devices
 @mixin bp-medium {
-    @media screen and (max-width: variables.$breakpoint-tablet) {
+    @media screen and (min-width: variables.$breakpoint-tablet) {
         @content;
     }
 }
